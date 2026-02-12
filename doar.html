@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar Roupas | EcoBrechó</title>
+    <link rel="stylesheet" href="doar.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>EcoBrechó</h1>
+        <p>Transforme suas roupas em impacto positivo 🌱</p>
+    </header>
+
+    <div class="voltar-container">
+        <a href="index.html" class="btn-voltar">← Voltar</a>
+    </div>
+
+    <div class="container">
+        <h2>Doe suas roupas</h2>
+
+        <div class="info-box">
+            ✔ A cada 5 peças doadas você recebe uma recompensa simbólica.<br>
+            ✔ As roupas passam por avaliação, higienização e ajustes.<br>
+            ✔ Depois são vendidas com preço acessível e sustentável.
+        </div>
+
+        <form id="formDoacao">
+            <label>Nome Completo</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Quantidade de Peças</label>
+            <input type="number" id="quantidade" min="1" required>
+
+            <label>Tipo de Peças</label>
+            <select required>
+                <option value="">Selecione</option>
+                <option>Feminina</option>
+                <option>Masculina</option>
+                <option>Infantil</option>
+                <option>Misto</option>
+            </select>
+
+            <label>Observações</label>
+            <textarea rows="4"></textarea>
+
+            <button type="submit" id="confirmar-doacao">Confirmar Doação</button>
+        </form>
+
+        <div class="mensagem" id="mensagemFinal"></div>
+        <a href="index.html">
+            <button type="submit" id="btn-voltar">Voltar para o início</button>
+        </a>
+    </div>
+
+    <footer>
+        © 2026 EcoBrechó | Moda consciente e circular
+    </footer>
+
+    <script>
+        document.getElementById("formDoacao").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let qtd = document.getElementById("quantidade").value;
+            let recompensa = Math.floor(qtd / 5) * 5;
+
+            let mensagem = document.getElementById("mensagemFinal");
+            mensagem.style.display = "block";
+
+            if (qtd >= 5) {
+                mensagem.innerHTML = `
+        💚 Obrigado por doar ${qtd} peças!<br>
+        Você receberá uma recompensa simbólica pelo seu gesto sustentável.<br><br>
+        Sua atitude ajuda a reduzir o desperdício e promove a moda circular!
+        `;
+            } else {
+                mensagem.innerHTML = `
+        💙 Obrigado por doar ${qtd} peça(s)!<br>
+        Mesmo pequenas atitudes geram grande impacto ambiental.
+        `;
+            }
+
+            document.getElementById("formDoacao").reset();
+            document.getElementById("btn-voltar").style.display = 'block'
+            document.getElementById("confirmar-doacao").style.display = 'none'
+        });
+    </script>
+
+</body>
+
+</html>

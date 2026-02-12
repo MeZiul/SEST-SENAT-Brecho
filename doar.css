@@ -1,0 +1,147 @@
+html {
+    scroll-behavior: smooth;
+}
+* {}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9f2f9;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+/* Página antiga saindo */
+::view-transition-old(root) {
+    animation: fade-out 0.3s ease forwards;
+}
+
+/* Página nova entrando */
+::view-transition-new(root) {
+    animation: fade-in 0.3s ease forwards;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #1b325f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.voltar-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 20px auto 0;
+}
+
+.btn-voltar {
+    display: inline-block;
+    background-color: #3a89c9;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #f26c4f;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1b325f;
+}
+
+.info-box {
+    background-color: #9cc4e4;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1b325f;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #f26c4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d95b40;
+}
+#btn-voltar {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #3a89c9;
+    color: white;
+    cursor: pointer;
+    display: none;
+    text-decoration:none;
+}
+.mensagem {
+    display: none;
+    margin-top: 20px;
+    background-color: #3a89c9;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #1b325f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
