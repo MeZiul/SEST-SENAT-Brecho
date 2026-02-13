@@ -1,0 +1,61 @@
+.voltar-container {
+    max-width: 800px;
+}
+
+.container {
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--azul-escuro);
+}
+
+.info-box {
+    background-color: var(--azul-claro);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: var(--azul-escuro);
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--coral);
+}
+#btn-voltar {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--azul-medio);
+    color: white;
+    cursor: pointer;
+    display: none;
+    text-decoration:none;
+}
+.mensagem {
+    display: none;
+    margin-top: 20px;
+    background-color: var(--azul-medio);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}

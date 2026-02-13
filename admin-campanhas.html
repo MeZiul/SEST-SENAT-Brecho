@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Campanhas - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>EcoAdmin</h2>
+            <nav>
+                <a href="admin.html">Dashboard</a>
+                <a href="admin-relatorios.html">Relatórios</a>
+                <a href="admin-usuarios.html">Usuários</a>
+                <a href="#" class="active">Campanhas</a>
+                <a href="admin-configuracoes.html">Configurações</a>
+                <a href="../index.html" class="logout">Sair</a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="topbar">
+                <h1>Campanhas</h1>
+                <button class="btn" id="abrirModal">+ Nova Campanha</button>
+            </header>
+            <div class="campaign-grid">
+                <div class="campaign-card">
+                    <div class="card-head">
+                        <h3>Doação de Inverno</h3>
+                        <h3 class="vertical-dots" data-open="editModal">⋮</h3>
+                    </div>
+                    <p>Meta: R$ 5.000</p>
+                    <p>Arrecadado: R$ 3.200</p>
+                    <span class="status active-status">Ativa</span>
+                </div>
+                <div class="campaign-card">
+                    <div class="card-head">
+                        <h3>Doação de Verão</h3>
+                        <h3 class="vertical-dots" data-open="editModal">⋮</h3>
+                    </div>
+                    <p>Meta: R$ 5.000</p>
+                    <p>Arrecadado: R$ 3.200</p>
+                    <span class="status closed-status">Encerrada</span>
+                </div>
+                <div class="campaign-card">
+                    <div class="card-head">
+                        <h3>Doação de Natal</h3>
+                        <h3 class="vertical-dots" data-open="editModal">⋮</h3>
+                    </div>
+                    <p>Meta: R$ 5.000</p>
+                    <p>Arrecadado: R$ 3.200</p>
+                    <span class="status inactive-status">Inativa</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <h2>Nova Campanha</h2>
+
+            <label>Nome da campanha</label>
+            <input type="text" placeholder="Ex: Promoção de Verão">
+
+            <label>Data de início</label>
+            <input type="date">
+
+            <label>Orçamento</label>
+            <input type="text" placeholder="R$ 0,00">
+
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="fecharModal">Cancelar</button>
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <h2>Editar Campanha</h2>
+
+            <label>Nome</label>
+            <input type="text" value="Doação de Inverno">
+
+            <label>Meta</label>
+            <input type="text" value="R$ 5.000">
+
+            <label>Arrecadado</label>
+            <input type="text" value="R$ 3.200">
+
+            <label>Status</label>
+            <select>
+                <option value="active-status">Ativa</option>
+                <option value="closed-status">Encerrada</option>
+                <option value="inactive-status">Inativa</option>
+            </select>
+
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="closeEdit">Cancelar</button>
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const abrirModalBtn = document.getElementById('abrirModal');
+        const fecharModalBtn = document.getElementById('fecharModal');
+        const modal = document.getElementById('modal');
+        const editModal = document.getElementById('editModal');
+        const closeEditBtn = document.getElementById('closeEdit');
+
+        document.querySelectorAll('.vertical-dots').forEach(dot => {
+            dot.addEventListener('click', () => {
+                editModal.classList.add('active');
+            });
+        });
+
+        closeEditBtn.addEventListener('click', () => {
+            editModal.classList.remove('active');
+        });
+
+        editModal.addEventListener('click', (e) => {
+            if (e.target === editModal) {
+                editModal.classList.remove('active');
+            }
+        });
+
+        abrirModalBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+        fecharModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

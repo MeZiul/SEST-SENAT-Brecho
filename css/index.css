@@ -1,72 +1,8 @@
-/* ===== RESET ===== */
-html {
-    scroll-behavior: smooth;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-}
-
-@view-transition {
-    navigation: auto;
-}
-
-/* Página antiga saindo */
-::view-transition-old(root) {
-    animation: fade-out 0.3s ease forwards;
-}
-
-/* Página nova entrando */
-::view-transition-new(root) {
-    animation: fade-in 0.3s ease forwards;
-}
-
-@keyframes fade-out {
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* ===== PALETA ===== */
-:root {
-    --azul-escuro: #1b325f;
-    --azul-medio: #3a89c9;
-    --azul-claro: #9cc4e4;
-    --fundo: #e9f2f9;
-    --coral: #f26c4f;
-}
-
-/* ===== GERAL ===== */
-body {
-    background: var(--fundo);
-}
-
-img {
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
 /* ===== HEADER ===== */
 header {
-    background: var(--azul-escuro);
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
 
     position: fixed;
     top: 0;
@@ -129,44 +65,6 @@ header nav a {
 .hero p {
     font-size: 18px;
     margin-bottom: 30px;
-}
-
-.btn-primary {
-    background: var(--azul-medio);
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.btn-primary:hover {
-    background: var(--coral);
-    color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 8px;
-    transition: 0.5s;
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--azul-medio);
-    color: var(--azul-medio);
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    border: 2px solid var(--coral);
-    color: var(--coral);
-    padding: 13px 24px;
-    transition: 0.5s;
-    margin: -1px;
 }
 
 /* ===== COMO FUNCIONA ===== */

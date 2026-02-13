@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>EcoAdmin</h2>
+            <nav>
+                <a href="admin.html">Dashboard</a>
+                <a href="admin-relatorios.html">Relatórios</a>
+                <a href="#" class="active">Usuários</a>
+                <a href="admin-campanhas.html">Campanhas</a>
+                <a href="admin-configuracoes.html">Configurações</a>
+                <a href="../index.html" class="logout">Sair</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <h1>Usuários</h1>
+            </header>
+
+            <input type="text" placeholder="Buscar usuário..." class="search">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João</td>
+                        <td>joao@email.com</td>
+                        <td>Cliente</td>
+                        <td>Ativo</td>
+                        <td>
+                            <button class="btn-small btn-edit-user">Editar</button>
+                            <button class="btn-danger btn-deactivate-user">Desativar</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Caio</td>
+                        <td>caio@email.com</td>
+                        <td>Atendente</td>
+                        <td>Ativo</td>
+                        <td>
+                            <button class="btn-small btn-edit-user">Editar</button>
+                            <button class="btn-danger btn-deactivate-user">Desativar</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Fabíola</td>
+                        <td>rh@brecho.com</td>
+                        <td>Admin</td>
+                        <td>Ativo</td>
+                        <td>
+                            <button class="btn-small btn-edit-user">Editar</button>
+                            <button class="btn-danger btn-deactivate-user">Desativar</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Maria</td>
+                        <td>maria@gmail.com</td>
+                        <td>Cliente</td>
+                        <td>Desativado</td>
+                        <td>
+                            <button class="btn-small btn-edit-user">Editar</button>
+                            <button class="btn-danger btn-deactivate-user">Ativar</button>
+                        </td>
+                </tbody>
+            </table>
+
+        </main>
+    </div>
+    <div class="modal-overlay" id="userModal">
+        <div class="modal">
+            <h2>Editar Usuário</h2>
+
+            <label>Nome</label>
+            <input type="text" value="João">
+
+            <label>Email</label>
+            <input type="email" value="joao@email.com">
+
+            <label>Perfil</label>
+            <select>
+                <option>Cliente</option>
+                <option>Administrador</option>
+                <option>Atendente</option>
+            </select>
+
+            <label>Status</label>
+            <select>
+                <option>Ativo</option>
+                <option>Inativo</option>
+            </select>
+
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="closeUserModal">Cancelar</button>
+                <button class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const userModal = document.getElementById("userModal");
+        const confirmModal = document.getElementById("confirmModal");
+
+        const closeUserModal = document.getElementById("closeUserModal");
+        const closeConfirm = document.getElementById("closeConfirm");
+
+        document.querySelectorAll(".btn-edit-user").forEach(btn => {
+            btn.addEventListener("click", () => {
+                userModal.classList.add("active");
+            });
+        });
+
+        document.querySelectorAll(".btn-deactivate-user").forEach(btn => {
+            btn.addEventListener("click", () => {
+                confirmModal.classList.add("active");
+            });
+        });
+
+        closeUserModal.addEventListener("click", () => {
+            userModal.classList.remove("active");
+        });
+
+        closeConfirm.addEventListener("click", () => {
+            confirmModal.classList.remove("active");
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === userModal) userModal.classList.remove("active");
+            if (e.target === confirmModal) confirmModal.classList.remove("active");
+        });
+    </script>
+
+</body>
+
+</html>

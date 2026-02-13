@@ -3,44 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Administrador</title>
-    <link rel="stylesheet" href="admin.css">
+    <title>Admin - EcoBairro Brechó</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
-    <div class="dashboard">
+    <div class="admin-container">
 
-        <div class="sidebar">
-            <h2>Administrador</h2>
-            <a href="#">Relatórios</a>
-            <a href="#">Usuários</a>
-            <a href="#">Campanhas</a>
-            <a href="#">Configurações</a>
-        </div>
+        <aside class="sidebar">
+            <h2>EcoAdmin</h2>
+            <nav>
+                <a href="#content">Dashboard</a>
+                <a href="admin-relatorios.html">Relatórios</a>
+                <a href="admin-usuarios.html">Usuários</a>
+                <a href="admin-campanhas.html">Campanhas</a>
+                <a href="admin-configuracoes.html">Configurações</a>
+                <a href="../index.html" class="logout">Sair</a>
+            </nav>
+        </aside>
 
-        <div class="content">
+        <main class="content">
+            <header class="topbar">
+                <h1>Dashboard</h1>
+            </header>
 
-            <h1>Dashboard Geral</h1>
-
-            <div class="kpis">
-                <div class="kpi-card">
-                    <h3>Faturamento</h3>
-                    <span>R$ 18.000</span>
+            <section class="cards">
+                <div class="card">
+                    <h3>R$ 12.540</h3>
+                    <p>Total de Vendas</p>
                 </div>
-
-                <div class="kpi-card">
-                    <h3>Doações</h3>
-                    <span>320</span>
+                <div class="card">
+                    <h3>350</h3>
+                    <p>Doações</p>
                 </div>
-
-                <div class="kpi-card">
-                    <h3>Usuários</h3>
-                    <span>1.250</span>
+                <div class="card">
+                    <h3>120</h3>
+                    <p>Usuários Ativos</p>
                 </div>
-            </div>
+                <div class="card">
+                    <h3>89</h3>
+                    <p>Itens em Estoque</p>
+                </div>
+            </section>
 
-        </div>
+        </main>
+
     </div>
 
 </body>
